@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Región - Portal IDEAM</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="region.css">
+</head>
+<body>
+
+    <!-- Encabezado (idéntico al principal) -->
+    <header class="encabezado-principal">
+        <div class="contenido-encabezado">
+            <button class="boton-menu-hamburguesa" id="botonMenuHamburguesa">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <div class="barra-busqueda">
+                <input type="text" placeholder="Buscar información, alertas, pronósticos...">
+                <button type="submit">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            
+            <button class="boton-usuario" id="botonUsuario">
+                <i class="fas fa-user"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Menu Lateral (idéntico al principal) -->
+    <nav class="menu-lateral" id="menuLateral">
+        <div class="encabezado-lateral">
+            <h3>Menú de Navegación</h3>
+            <button class="boton-cerrar-menu" id="botonCerrarMenu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <div class="seccion-menu">
+            <h4>Regiones</h4>
+            <select class="selector-region" id="selectorRegion">
+                <option value="">Seleccionar región</option>
+                <option value="amazonica">Amazonas / Caribe</option>
+                <option value="pacifica">Pacífica</option>
+                <option value="orinoquía">Orinoquía</option>
+                <option value="andina">Andina</option>
+                <option value="insular">Insular</option>
+            </select>
+            <ul class="lista-submenu" id="listaSubmenu">
+                <!-- Se llenara dinamicamente -->
+            </ul>
+        </div>
+
+        <div class="seccion-menu">
+            <h4>Enlaces Rápidos</h4>
+            <ul class="enlaces-rapidos">
+                <li><i class="fas fa-fire"></i> Alertas tempranas</li>
+                <li><i class="fas fa-cloud-sun"></i> Pronóstico meteorológico</li>
+                <li><i class="fas fa-book"></i> Guías y protocolos</li>
+                <li><i class="fas fa-exclamation-triangle"></i> Reportar incidencia</li>
+                <li><i class="fas fa-newspaper"></i> Noticias y eventos</li>
+                <li><i class="fas fa-map-marker-alt"></i> Sedes y contacto</li>
+            </ul>
+        </div>
+
+        <div class="seccion-menu">
+            <h4>¿Quiénes somos?</h4>
+            <ul class="enlaces-rapidos">
+                <li><i class="fas fa-info-circle"></i> Misión y Visión</li>
+                <li><i class="fas fa-users"></i> Nuestro equipo</li>
+                <li><i class="fas fa-building"></i> Sedes</li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Superposicion -->
+    <div class="superposicion" id="superposicion"></div>
+
+    <!-- Contenido Principal -->
+    <main class="contenedor-principal">
+        
+        <div class="banner-region" id="bannerRegion">
+            Región Amazónica
+        </div>
+
+        <section class="seccion-info">
+            <h2>Descripción de la Región</h2>
+            <p id="descripcionRegion">
+                La región amazónica colombiana comprende el 42% del territorio nacional...
+            </p>
+        </section>
+
+        <!-- SECCION SOLO PARA BRIGADISTAS -->
+        <div class="seccion-brigadista" id="seccionBrigadista">
+            
+            <section class="seccion-info">
+                <div class="alerta-mensaje">
+                    <strong><i class="fas fa-exclamation-triangle"></i> Alerta Importante</strong>
+                    <p id="mensajeAlerta">Condiciones de baja humedad registradas en zonas específicas.</p>
+                </div>
+
+                <h2>Alertas de la Región</h2>
+                
+                <div id="mapaRegion" class="mapa-contenedor"></div>
+
+                <div class="leyenda-mapa">
+                    <div class="leyenda-item">
+                        <div class="color-box color-alto"></div>
+                        <span>Riesgo Alto</span>
+                    </div>
+                    <div class="leyenda-item">
+                        <div class="color-box color-medio"></div>
+                        <span>Riesgo Medio</span>
+                    </div>
+                    <div class="leyenda-item">
+                        <div class="color-box color-bajo"></div>
+                        <span>Riesgo Bajo</span>
+                    </div>
+                    <div class="leyenda-item">
+                        <div class="color-box color-sin"></div>
+                        <span>Sin Riesgo</span>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 30px;">Notificar Alerta</h3>
+                <p><strong>Zona seleccionada en el mapa:</strong> <span id="zonaSeleccionada">Ninguna</span></p>
+
+                <div>
+                    <label><strong>Tipo de alerta:</strong></label>
+                    <div class="botones-tipo-alerta">
+                        <button class="btn-tipo" data-tipo="preventiva">Preventiva</button>
+                        <button class="btn-tipo" data-tipo="baja">Baja</button>
+                        <button class="btn-tipo" data-tipo="alta">Alta</button>
+                        <button class="btn-tipo" data-tipo="media">Media</button>
+                        <button class="btn-tipo" data-tipo="peligrosa">Peligrosa</button>
+                    </div>
+                </div>
+
+                <div class="zona-notificacion">
+                    <label><strong>Enviar a:</strong></label>
+                    <div class="lista-destinatarios">
+                        <div class="destinatario-item" data-tipo="coinvestigadores">
+                            <h4><i class="fas fa-users"></i> Co-investigadores</h4>
+                            <p>Lista de contactos disponible</p>
+                        </div>
+                        <div class="destinatario-item" data-tipo="brigada">
+                            <h4><i class="fas fa-shield-alt"></i> Equipo de brigada</h4>
+                            <p>Lista de contactos disponible</p>
+                        </div>
+                        <div class="destinatario-item" data-tipo="otro">
+                            <h4><i class="fas fa-user-plus"></i> Otro</h4>
+                            <input type="text" placeholder="Agregar contacto" class="input-contacto">
+                            <div class="lista-seleccionados">
+                                <small>Lista de seleccionados</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <label><strong>Mensaje por defecto:</strong></label>
+                    <textarea class="mensaje-area" placeholder="Escribe el mensaje de alerta..."></textarea>
+                    
+                    <div class="botones-accion">
+                        <button class="btn-accion" id="btnModificar">
+                            <i class="fas fa-edit"></i> Modificar
+                        </button>
+                        <button class="btn-accion" id="btnReiniciar">
+                            <i class="fas fa-undo"></i> Reiniciar
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="seccion-info">
+                <h2>Accesos Rápidos</h2>
+                <div class="accesos-rapidos">
+                    <div class="card-acceso" data-accion="pronostico">
+                        <i class="fas fa-cloud-sun"></i>
+                        <h4>Pronóstico meteorológico</h4>
+                    </div>
+                    <div class="card-acceso" data-accion="reporte">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <h4>Reportar incidencia</h4>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- SECCION SOLO PARA INVESTIGADORES -->
+        <div class="seccion-investigador" id="seccionInvestigador">
+            
+            <section class="seccion-info">
+                <h2>Datos</h2>
+                
+                <h3>Consultar y registrar alertas tempranas</h3>
+                <div class="filtros-datos">
+                    <select id="filtroDepartamento">
+                        <option>Seleccionar departamento</option>
+                    </select>
+                    <select id="filtroSeveridad">
+                        <option>Severidad de nivel de alerta</option>
+                        <option>Bajo</option>
+                        <option>Medio</option>
+                        <option>Alto</option>
+                        <option>Crítico</option>
+                    </select>
+                    <input type="date" id="filtroFecha">
+                </div>
+
+                <div class="item-dato">
+                    <p><strong>Información relacionada a la búsqueda</strong></p>
+                    <p class="texto-placeholder">Los datos aparecerán aquí una vez realices una búsqueda...</p>
+                </div>
+
+                <div class="item-dato">
+                    <p><strong>Información relacionada a la búsqueda</strong></p>
+                    <p class="texto-placeholder">Los datos aparecerán aquí una vez realices una búsqueda...</p>
+                </div>
+
+                <div class="botones-accion">
+                    <button class="btn-accion" id="btnDescargarDatos">
+                        <i class="fas fa-download"></i> Descargar datos
+                    </button>
+                    <button class="btn-accion" id="btnRegistrarDB">
+                        <i class="fas fa-save"></i> Registrar en base de datos
+                    </button>
+                    <button class="btn-accion" id="btnVerMapa">
+                        <i class="fas fa-map"></i> Ver mapa de alertas
+                    </button>
+                </div>
+            </section>
+
+            <section class="seccion-info">
+                <h2>Análisis de series históricas</h2>
+                
+                <div class="grid-dos-columnas">
+                    <div>
+                        <label><strong>Departamento:</strong></label>
+                        <input type="text" class="input-texto" id="inputDepartamento">
+                    </div>
+                    <div>
+                        <label><strong>Estación meteorológica:</strong></label>
+                        <input type="text" class="input-texto" id="inputEstacion">
+                    </div>
+                </div>
+
+                <label><strong>Variables a consultar:</strong></label>
+                <div class="checkboxes-variables">
+                    <label><input type="checkbox" name="variable" value="precipitacion"> Precipitación</label>
+                    <label><input type="checkbox" name="variable" value="temperatura"> Temperatura</label>
+                    <label><input type="checkbox" name="variable" value="humedad"> Humedad relativa</label>
+                    <label><input type="checkbox" name="variable" value="viento"> Velocidad del viento</label>
+                    <label><input type="checkbox" name="variable" value="radiacion"> Radiación solar</label>
+                </div>
+
+                <div class="grid-dos-columnas">
+                    <div>
+                        <label><strong>Fecha inicio:</strong></label>
+                        <input type="date" class="input-texto" id="fechaInicio">
+                    </div>
+                    <div>
+                        <label><strong>Fecha fin:</strong></label>
+                        <input type="date" class="input-texto" id="fechaFin">
+                    </div>
+                </div>
+
+                <label><strong>Tipo de archivo:</strong></label>
+                <div class="radio-formato">
+                    <label><input type="radio" name="formato" value="csv"> CSV</label>
+                    <label><input type="radio" name="formato" value="excel"> Excel</label>
+                    <label><input type="radio" name="formato" value="pdf"> PDF</label>
+                </div>
+
+                <div class="botones-accion">
+                    <button class="btn-accion" id="btnConsultar">
+                        <i class="fas fa-search"></i> Consultar datos
+                    </button>
+                    <button class="btn-accion" id="btnDescargar">
+                        <i class="fas fa-download"></i> Descargar
+                    </button>
+                    <button class="btn-accion" id="btnVisualizarGrafico">
+                        <i class="fas fa-chart-line"></i> Visualizar gráfico
+                    </button>
+                </div>
+            </section>
+
+            <section class="seccion-info">
+                <h2>Accesos Rápidos</h2>
+                <div class="accesos-rapidos">
+                    <div class="card-acceso" data-accion="pronostico">
+                        <i class="fas fa-cloud-sun"></i>
+                        <h4>Pronóstico meteorológico</h4>
+                    </div>
+                    <div class="card-acceso" data-accion="reporte">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <h4>Reportar incidencia</h4>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </main>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script src="region.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>

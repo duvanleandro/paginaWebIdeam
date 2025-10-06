@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal IDEAM - Instituto de Hidrología, Meteorología y Estudios Ambientales</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Encabezado -->
+    <header class="encabezado-principal">
+        <div class="contenido-encabezado">
+            <button class="boton-menu-hamburguesa" id="botonMenuHamburguesa">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <div class="barra-busqueda">
+                <input type="text" placeholder="Buscar información, alertas, pronósticos...">
+                <button type="submit">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            
+            <button class="boton-usuario" id="botonUsuario">
+                <i class="fas fa-user"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Menu Lateral -->
+    <nav class="menu-lateral" id="menuLateral">
+        <div class="encabezado-lateral">
+            <h3>Menú de Navegación</h3>
+            <button class="boton-cerrar-menu" id="botonCerrarMenu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <div class="seccion-menu">
+            <h4>Regiones</h4>
+            <select class="selector-region" id="selectorRegion">
+                <option value="">Seleccionar región</option>
+                <option value="amazonica">Amazonas / Caribe</option>
+                <option value="pacifica">Pacífica</option>
+                <option value="orinoquía">Orinoquía</option>
+                <option value="andina">Andina</option>
+                <option value="insular">Insular</option>
+            </select>
+            <ul class="lista-submenu" id="listaSubmenu">
+                <!-- Se llenara dinamicamente -->
+            </ul>
+        </div>
+
+        <div class="seccion-menu">
+            <h4>Enlaces Rápidos</h4>
+            <ul class="enlaces-rapidos">
+                <li><i class="fas fa-fire"></i> Alertas tempranas</li>
+                <li><i class="fas fa-cloud-sun"></i> Pronóstico meteorológico</li>
+                <li><i class="fas fa-book"></i> Guías y protocolos</li>
+                <li><i class="fas fa-exclamation-triangle"></i> Reportar incidencia</li>
+                <li><i class="fas fa-newspaper"></i> Noticias y eventos</li>
+                <li><i class="fas fa-map-marker-alt"></i> Sedes y contacto</li>
+            </ul>
+        </div>
+
+        <div class="seccion-menu">
+            <h4>¿Quiénes somos?</h4>
+            <ul class="enlaces-rapidos">
+                <li><i class="fas fa-info-circle"></i> Misión y Visión</li>
+                <li><i class="fas fa-users"></i> Nuestro equipo</li>
+                <li><i class="fas fa-building"></i> Sedes</li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Superposicion -->
+    <div class="superposicion" id="superposicion"></div>
+
+    <!-- Contenido Principal -->
+    <main class="contenedor-principal">
+        
+        <!-- Banner Principal -->
+        <section class="banner-principal">
+            <div class="contenido-banner">
+                Portal IDEAM
+            </div>
+        </section>
+
+        <!-- Seccion Quienes Somos -->
+        <section class="seccion-informacion" id="mision-vision">
+            <h2>¿Quiénes somos?</h2>
+            <p>
+                El Instituto de Hidrología, Meteorología y Estudios Ambientales (IDEAM) es la entidad encargada de suministrar información científica y técnica sobre el estado y las dinámicas de los recursos naturales y del medio ambiente en Colombia. Apoyamos la toma de decisiones ambientales mediante el monitoreo continuo de variables meteorológicas, hidrológicas y ambientales.
+            </p>
+        </section>
+
+        <!-- Seccion Mision -->
+        <section class="seccion-informacion" id="mision-vision">
+            <h2>Misión</h2>
+            <p>
+                Generar conocimiento y suministrar información hidrometeorológica y ambiental confiable y oportuna para contribuir al desarrollo sostenible del país, la gestión del riesgo y la adaptación al cambio climático, mediante la investigación científica aplicada y la prestación de servicios especializados.
+            </p>
+        </section>
+
+        <!-- Seccion Vision -->
+        <section class="seccion-informacion" id="mision-vision">
+            <h2>Visión</h2>
+            <p>
+                Ser reconocidos como el referente nacional e internacional en la generación de conocimiento científico y tecnológico sobre el comportamiento de los recursos hídricos, el clima y el medio ambiente, fortaleciendo la capacidad institucional para la toma de decisiones informadas que contribuyan a la sostenibilidad ambiental del país.
+            </p>
+        </section>
+
+       <!-- Alertas Recientes -->
+<section class="seccion-alertas" id="alertas-tempranas">
+    <h2>Alertas Recientes</h2>
+    <div class="cuadricula-alertas">
+        <div class="contenedor-mapa" id="contenedor-mapa">
+            <!-- El mapa se carga aquí -->
+        </div>
+        <div class="lista-alertas">
+            <h3>Listado de Alertas</h3>
+            <div class="item-alerta">
+                <h4>Santander - Girón</h4>
+                <p>Condiciones de baja humedad y altas temperaturas</p>
+                <span class="nivel-alerta alerta-alto">RIESGO ALTO</span>
+            </div>
+            <div class="item-alerta">
+                <h4>Antioquia - Medellín</h4>
+                <p>Temperatura elevada, humedad relativa baja</p>
+                <span class="nivel-alerta alerta-medio">RIESGO MEDIO</span>
+            </div>
+            <div class="item-alerta">
+                <h4>Cundinamarca - Bogotá</h4>
+                <p>Monitoreo continuo requerido</p>
+                <span class="nivel-alerta alerta-medio">RIESGO MEDIO</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Pronostico del Clima -->
+<section class="seccion-clima" id="pronostico-meteorologico">
+        <h2>Pronóstico del Clima en tu región</h2>
+        <select class="selector-ubicacion">
+        <option value="">Buscar ubicación</option>
+        <option value="bucaramanga">Bucaramanga</option>
+        <option value="bogota">Bogotá</option>
+        <option value="medellin">Medellín</option>
+        <option value="cali">Cali</option>
+        <option value="cartagena">Cartagena</option>
+    </select>
+    
+    <div class="contenedor-pronostico">
+        <div class="linea-hora-actual" id="lineaHoraActual">
+            <div class="etiqueta-hora"></div>
+        </div>
+        
+        <div class="pronostico-clima">
+            <div class="item-clima" data-hora="10">
+                <i class="fas fa-sun"></i>
+                <div class="hora-clima">10:00 AM</div>
+                <div class="temperatura-clima">32°C</div>
+            </div>
+            <div class="item-clima nublado" data-hora="14">
+                <i class="fas fa-cloud"></i>
+                <div class="hora-clima">2:00 PM</div>
+                <div class="temperatura-clima">28°C</div>
+            </div>
+            <div class="item-clima lluvioso" data-hora="18">
+                <i class="fas fa-cloud-rain"></i>
+                <div class="hora-clima">6:00 PM</div>
+                <div class="temperatura-clima">24°C</div>
+            </div>
+            <div class="item-clima noche" data-hora="22">
+                <i class="fas fa-moon"></i>
+                <div class="hora-clima">10:00 PM</div>
+                <div class="temperatura-clima">20°C</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- Guias y Protocolos -->
+      <!-- Guias y Protocolos -->
+      <section class="seccion-guias" id="guias-protocolos">
+    <h2>Guías y Protocolos</h2>
+    
+    <div class="contenedor-carrusel-cards">
+        <div class="cards-apiladas">
+            <!-- Card 1 -->
+            <div class="tarjeta-guia" data-posicion="0" data-id="0">
+                <div class="titulo-card">Prevención de Incendios Forestales</div>
+                <div class="imagen-guia">
+                    <i class="fas fa-fire-extinguisher"></i>
+                </div>
+                <div class="contenido-guia">
+                    <p>Protocolos y recomendaciones para prevenir y actuar ante incendios forestales en campo.</p>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="tarjeta-guia" data-posicion="1" data-id="1">
+                <div class="titulo-card">Seguridad en Campo</div>
+                <div class="imagen-guia">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <div class="contenido-guia">
+                    <p>Manual de seguridad para brigadistas y equipos de campo en situaciones de riesgo.</p>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="tarjeta-guia" data-posicion="2" data-id="2">
+                <div class="titulo-card">Primeros Auxilios</div>
+                <div class="imagen-guia">
+                    <i class="fas fa-first-aid"></i>
+                </div>
+                <div class="contenido-guia">
+                    <p>Guía completa de primeros auxilios en situaciones de emergencia ambiental.</p>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="tarjeta-guia" data-posicion="-2" data-id="3">
+                <div class="titulo-card">Conservación Ambiental</div>
+                <div class="imagen-guia">
+                    <i class="fas fa-tree"></i>
+                </div>
+                <div class="contenido-guia">
+                    <p>Mejores prácticas para la conservación de bosques y ecosistemas naturales.</p>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="tarjeta-guia" data-posicion="-1" data-id="4">
+                <div class="titulo-card">Manejo de Equipos</div>
+                <div class="imagen-guia">
+                    <i class="fas fa-tools"></i>
+                </div>
+                <div class="contenido-guia">
+                    <p>Guía de manejo y mantenimiento de equipos de campo y emergencia.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+        <!-- Noticias y Eventos -->
+        <section class="seccion-noticias" id="noticias-eventos">
+            <h2>Noticias y Eventos</h2>
+            <div class="cuadricula-noticias">
+                <div class="tarjeta-noticia">
+                    <div class="imagen-noticia">
+                        <i class="fas fa-newspaper"></i>
+                    </div>
+                    <div class="contenido-noticia">
+                        <h3>Capacitación en Prevención</h3>
+                        <p>Jornada de capacitación para brigadistas forestales en la región andina.</p>
+                    </div>
+                </div>
+                <div class="tarjeta-noticia">
+                    <div class="imagen-noticia">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <div class="contenido-noticia">
+                        <h3>Conferencia Internacional</h3>
+                        <p>Evento sobre cambio climático y gestión de recursos naturales.</p>
+                    </div>
+                </div>
+                <div class="tarjeta-noticia">
+                    <div class="imagen-noticia">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <div class="contenido-noticia">
+                        <h3>Reconocimiento Nacional</h3>
+                        <p>IDEAM recibe premio por su labor en monitoreo ambiental.</p>
+                    </div>
+                </div>
+                <div class="tarjeta-noticia">
+                    <div class="imagen-noticia">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <div class="contenido-noticia">
+                        <h3>Nuevas Tecnologías</h3>
+                        <p>Implementación de sistemas de monitoreo satelital avanzado.</p>
+                    </div>
+                </div>
+                <div class="tarjeta-noticia">
+                    <div class="imagen-noticia">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="contenido-noticia">
+                        <h3>Programa Comunitario</h3>
+                        <p>Iniciativa de participación ciudadana en conservación ambiental.</p>
+                    </div>
+                </div>
+                <div class="tarjeta-noticia">
+                    <div class="imagen-noticia">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="contenido-noticia">
+                        <h3>Programa Educativo</h3>
+                        <p>Educación ambiental en instituciones educativas de todo el país.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Pie de Pagina -->
+    <footer class="pie-pagina">
+        <div class="contenido-pie">
+            <div class="columna-pie">
+                <h4>Nuestras Sedes</h4>
+                <ul>
+                    <li><a href="#">Bogotá D.C.</a></li>
+                    <li><a href="#">Bucaramanga</a></li>
+                    <li><a href="#">Medellín</a></li>
+                    <li><a href="#">Cali</a></li>
+                </ul>
+            </div>
+            <div class="columna-pie">
+                <h4>Contacto</h4>
+                <ul>
+                  <li><a href="#">Línea Nacional: 01 8000 123 456</a></li>
+                  <li><a href="#">Email: contacto@ideam.gov.co</a></li>
+                  <li><button id="btnReportarIncidencia" class="boton-incidencia">Reportar incidencia</button></li>
+                </ul>
+              </div>
+              
+            <div class="columna-pie">
+                <h4>Información</h4>
+                <ul>
+                    <li><a href="#">Términos y condiciones</a></li>
+                    <li><a href="#">Política de privacidad</a></li>
+                    <li><a href="#">Transparencia</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+
+    <!-- Modal Login/Register -->
+<div class="modal-login" id="modalLogin">
+    <div class="modal-contenido">
+      <span class="cerrar-modal" id="cerrarModal">&times;</span>
+      <div class="formularios">
+  
+        <!-- Formulario Login -->
+        <form id="formLogin" class="formulario activo">
+          <h2>Iniciar Sesión</h2>
+          <input type="text" id="loginUsuario" placeholder="Usuario o correo" required>
+          <input type="password" id="loginPassword" placeholder="Contraseña" required>
+          <button type="submit">Ingresar</button>
+          <p>¿No tienes cuenta? <a href="#" id="mostrarRegistro">Regístrate</a></p>
+        </form>
+  
+        <!-- Formulario Registro -->
+        <form id="formRegistro" class="formulario">
+          <h2>Registrarse</h2>
+          <input type="text" id="registroNombre" placeholder="Nombre completo" required>
+          <input type="email" id="registroCorreo" placeholder="Correo electrónico" required>
+          <input type="password" id="registroPassword" placeholder="Contraseña" required>
+          <select id="registroRol" required>
+            <option value="">Seleccionar rol</option>
+            <option value="brigadista">Brigadista</option>
+            <option value="investigador">Investigador</option>
+          </select>
+          <button type="submit">Crear cuenta</button>
+          <p>¿Ya tienes cuenta? <a href="#" id="mostrarLogin">Inicia sesión</a></p>
+        </form>
+  
+      </div>
+    </div>
+  </div>
+<!-- Modal Reportar Incidencia -->
+<div class="modal-incidencia" id="modalIncidencia">
+    <div class="contenido-incidencia">
+      <span class="cerrar-modal" id="cerrarIncidencia">&times;</span>
+      <h2>Reportar Incidencia</h2>
+      <form id="formIncidencia">
+        <label>Nombre:</label>
+        <input type="text" id="incidenciaNombre" readonly>
+  
+        <label>Correo:</label>
+        <input type="email" id="incidenciaCorreo" readonly>
+  
+        <label>Rol:</label>
+        <input type="text" id="incidenciaRol" readonly>
+  
+        <label>Tipo de incidencia:</label>
+        <select id="incidenciaTipo" required>
+          <option value="">Seleccionar tipo</option>
+          <option value="fuego">Incendio forestal</option>
+          <option value="inundacion">Inundación</option>
+          <option value="deslizamiento">Deslizamiento de tierra</option>
+          <option value="otro">Otro</option>
+        </select>
+  
+        <label>Descripción:</label>
+        <textarea id="incidenciaDescripcion" rows="4" placeholder="Describe la situación..." required></textarea>
+  
+        <label>Adjuntar archivo (opcional):</label>
+        <input type="file" id="incidenciaArchivo" accept="image/*,video/*,application/pdf">
+  
+        <button type="submit">Enviar incidencia</button>
+      </form>
+    </div>
+  </div>
+  
+  
+</body>
+</html>
