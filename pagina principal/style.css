@@ -1126,3 +1126,73 @@ body {
     cursor: not-allowed;
   }
     
+  /* Autocompletado de búsqueda */
+.barra-busqueda {
+    position: relative;
+}
+
+.sugerencias-busqueda {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 40px;
+    background: white;
+    border: 2px solid #333;
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    max-height: 300px;
+    overflow-y: auto;
+    display: none;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.sugerencias-busqueda.activo {
+    display: block;
+}
+
+.item-sugerencia {
+    padding: 12px 15px;
+    cursor: pointer;
+    border-bottom: 1px solid #e0e0e0;
+    transition: background 0.2s;
+}
+
+.item-sugerencia:last-child {
+    border-bottom: none;
+}
+
+.item-sugerencia:hover {
+    background: #e8f5e9;
+}
+
+.item-sugerencia strong {
+    color: #2e7d32;
+    font-size: 14px;
+    display: block;
+    margin-bottom: 3px;
+}
+
+.item-sugerencia small {
+    color: #666;
+    font-size: 12px;
+}
+
+.tipo-sugerencia {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: bold;
+    margin-left: 8px;
+}
+
+.tipo-region {
+    background: #81c784;
+    color: white;
+}
+
+.tipo-departamento {
+    background: #64b5f6;
+    color: white;
+}

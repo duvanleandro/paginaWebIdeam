@@ -21,10 +21,11 @@
             </button>
             
             <div class="barra-busqueda">
-                <input type="text" placeholder="Buscar información, alertas, pronósticos...">
+                <input type="text" id="inputBusqueda" placeholder="Buscar información, alertas, pronósticos...">
                 <button type="submit">
                     <i class="fas fa-search"></i>
                 </button>
+                <div class="sugerencias-busqueda" id="sugerenciasBusqueda"></div>
             </div>
             
             <button class="boton-usuario" id="botonUsuario">
@@ -174,6 +175,65 @@
                         </button>
                     </div>
                 </div>
+</section>
+
+            <section class="seccion-info">
+                <h2>Biblioteca de Recursos</h2>
+                <p>Descarga guías y protocolos específicos para esta región:</p>
+                
+                <div class="lista-guias-brigadista">
+                    <div class="item-guia-descarga">
+                        <div class="icono-guia">
+                            <i class="fas fa-fire-extinguisher"></i>
+                        </div>
+                        <div class="info-guia">
+                            <h4>Prevención de Incendios Forestales</h4>
+                            <p>Protocolos y recomendaciones para prevenir y actuar ante incendios forestales.</p>
+                        </div>
+                        <button class="btn-descargar-guia" data-guia="Guia_Prevencion_Incendios">
+                            <i class="fas fa-download"></i> Descargar PDF
+                        </button>
+                    </div>
+
+                    <div class="item-guia-descarga">
+                        <div class="icono-guia">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="info-guia">
+                            <h4>Seguridad en Campo</h4>
+                            <p>Manual de seguridad para brigadistas y equipos de campo en situaciones de riesgo.</p>
+                        </div>
+                        <button class="btn-descargar-guia" data-guia="Manual_Seguridad_Campo">
+                            <i class="fas fa-download"></i> Descargar PDF
+                        </button>
+                    </div>
+
+                    <div class="item-guia-descarga">
+                        <div class="icono-guia">
+                            <i class="fas fa-first-aid"></i>
+                        </div>
+                        <div class="info-guia">
+                            <h4>Primeros Auxilios</h4>
+                            <p>Guía completa de primeros auxilios en situaciones de emergencia ambiental.</p>
+                        </div>
+                        <button class="btn-descargar-guia" data-guia="Guia_Primeros_Auxilios">
+                            <i class="fas fa-download"></i> Descargar PDF
+                        </button>
+                    </div>
+
+                    <div class="item-guia-descarga">
+                        <div class="icono-guia">
+                            <i class="fas fa-map-marked-alt"></i>
+                        </div>
+                        <div class="info-guia">
+                            <h4>Protocolos de Evacuación</h4>
+                            <p>Procedimientos de evacuación y rutas de escape en zonas de riesgo.</p>
+                        </div>
+                        <button class="btn-descargar-guia" data-guia="Protocolos_Evacuacion">
+                            <i class="fas fa-download"></i> Descargar PDF
+                        </button>
+                    </div>
+                </div>
             </section>
 
             <section class="seccion-info">
@@ -241,14 +301,17 @@
                 <div class="grid-dos-columnas">
                     <div>
                         <label><strong>Departamento:</strong></label>
-                        <input type="text" class="input-texto" id="inputDepartamento">
+                        <select class="input-texto" id="inputDepartamento">
+                            <option value="">Seleccionar departamento</option>
+                        </select>
                     </div>
                     <div>
                         <label><strong>Estación meteorológica:</strong></label>
-                        <input type="text" class="input-texto" id="inputEstacion">
+                        <select class="input-texto" id="inputEstacion">
+                            <option value="">Seleccionar estación</option>
+                        </select>
                     </div>
                 </div>
-
                 <label><strong>Variables a consultar:</strong></label>
                 <div class="checkboxes-variables">
                     <label><input type="checkbox" name="variable" value="precipitacion"> Precipitación</label>
@@ -287,10 +350,10 @@
                         <i class="fas fa-chart-line"></i> Visualizar gráfico
                     </button>
                 </div>
-            </section>
+                </section>
 
-            <section class="seccion-info">
-                <h2>Accesos Rápidos</h2>
+                <section class="seccion-info">
+                    <h2>Accesos Rápidos</h2>
                 <div class="accesos-rapidos">
                     <div class="card-acceso" data-accion="pronostico">
                         <i class="fas fa-cloud-sun"></i>

@@ -1,4 +1,4 @@
-// Script para la página de región
+// Script para la página de región - CORREGIDO
 
 $(document).ready(function() {
 
@@ -17,6 +17,7 @@ $(document).ready(function() {
                     alerta: 'Monitoreo de niveles de río. Temporada de lluvias constante.',
                     coordenadas: {lat: -3.4, lon: -70.0},
                     zoom: 7,
+                    estaciones: ['Leticia - Aeropuerto', 'Puerto Nariño - Estación Fluvial', 'Tarapacá - Base Meteorológica'],
                     alertasActivas: [
                         {nombre: 'Leticia - Zona urbana', nivel: 'medio', coords: [-4.2, -69.9]},
                         {nombre: 'Puerto Nariño', nivel: 'bajo', coords: [-3.8, -70.4]}
@@ -27,6 +28,7 @@ $(document).ready(function() {
                     alerta: 'Riesgo de deforestación e incendios forestales en áreas intervenidas.',
                     coordenadas: {lat: 1.6, lon: -75.6},
                     zoom: 7,
+                    estaciones: ['Florencia - Centro Urbano', 'San Vicente del Caguán - Rural', 'Cartagena del Chairá - Estación Base'],
                     alertasActivas: [
                         {nombre: 'Florencia - Sector Norte', nivel: 'alto', coords: [1.7, -75.6]},
                         {nombre: 'San Vicente del Caguán', nivel: 'medio', coords: [2.1, -74.8]}
@@ -37,6 +39,7 @@ $(document).ready(function() {
                     alerta: 'Condiciones de acceso limitado. Monitoreo satelital activo.',
                     coordenadas: {lat: 2.7, lon: -68.5},
                     zoom: 7,
+                    estaciones: ['Inírida - Aeropuerto', 'Puerto Colombia - Río Inírida'],
                     alertasActivas: [
                         {nombre: 'Inírida', nivel: 'bajo', coords: [3.9, -67.9]}
                     ]
@@ -46,6 +49,7 @@ $(document).ready(function() {
                     alerta: 'Alerta por temporada seca. Riesgo moderado de incendios.',
                     coordenadas: {lat: 2.0, lon: -72.5},
                     zoom: 7,
+                    estaciones: ['San José del Guaviare - Centro', 'Miraflores - Estación Rural'],
                     alertasActivas: [
                         {nombre: 'San José - Zona rural', nivel: 'alto', coords: [2.6, -72.6]},
                         {nombre: 'Miraflores', nivel: 'medio', coords: [1.3, -71.9]}
@@ -56,6 +60,7 @@ $(document).ready(function() {
                     alerta: 'Monitoreo de deslizamientos en zona montañosa.',
                     coordenadas: {lat: 0.8, lon: -76.0},
                     zoom: 7,
+                    estaciones: ['Mocoa - Centro Urbano', 'Puerto Asís - Estación Fluvial', 'Valle del Guamuez'],
                     alertasActivas: [
                         {nombre: 'Mocoa - Centro', nivel: 'medio', coords: [1.2, -76.6]},
                         {nombre: 'Puerto Asís', nivel: 'bajo', coords: [0.5, -76.5]}
@@ -66,57 +71,9 @@ $(document).ready(function() {
                     alerta: 'Sin alertas significativas. Monitoreo regular.',
                     coordenadas: {lat: 0.4, lon: -70.2},
                     zoom: 7,
+                    estaciones: ['Mitú - Aeropuerto', 'Carurú - Base Remota'],
                     alertasActivas: [
                         {nombre: 'Mitú', nivel: 'bajo', coords: [1.3, -70.2]}
-                    ]
-                }
-            }
-        },
-        'pacifica': {
-            nombre: 'Región Pacífica',
-            descripcion: 'La región Pacífica es una de las zonas más lluviosas del planeta, con bosques húmedos tropicales y gran riqueza en recursos hídricos.',
-            coordenadas: {lat: 4.5, lon: -77},
-            zoom: 7,
-            departamentos: {
-                'Chocó': {
-                    descripcion: 'Chocó es el departamento con mayor pluviosidad de Colombia. Su capital es Quibdó. Registra precipitaciones superiores a 10,000 mm anuales en algunas zonas.',
-                    alerta: 'Altas precipitaciones. Riesgo de inundaciones.',
-                    coordenadas: {lat: 5.7, lon: -76.6},
-                    zoom: 7,
-                    alertasActivas: [
-                        {nombre: 'Quibdó - Zona baja', nivel: 'alto', coords: [5.7, -76.7]},
-                        {nombre: 'Istmina', nivel: 'medio', coords: [5.2, -76.7]},
-                        {nombre: 'Condoto', nivel: 'medio', coords: [5.1, -76.6]}
-                    ]
-                },
-                'Valle del Cauca': {
-                    descripcion: 'Valle del Cauca tiene clima variado según altitud. Su capital es Cali. Zona pacífica con alta humedad y temperaturas de 24-28°C.',
-                    alerta: 'Monitoreo de cuenca del río Cauca.',
-                    coordenadas: {lat: 3.8, lon: -76.5},
-                    zoom: 7,
-                    alertasActivas: [
-                        {nombre: 'Buenaventura - Puerto', nivel: 'medio', coords: [3.9, -77.0]},
-                        {nombre: 'Cali - Ladera', nivel: 'bajo', coords: [3.4, -76.5]}
-                    ]
-                },
-                'Cauca': {
-                    descripcion: 'Cauca tiene territorio en costa pacífica y zona andina. Su capital es Popayán. En la costa presenta clima cálido húmedo con temperaturas de 26-28°C.',
-                    alerta: 'Vigilancia de actividad volcánica cercana.',
-                    coordenadas: {lat: 2.5, lon: -77.0},
-                    zoom: 7,
-                    alertasActivas: [
-                        {nombre: 'Guapi - Costa', nivel: 'medio', coords: [2.6, -77.9]},
-                        {nombre: 'Timbiquí', nivel: 'bajo', coords: [2.8, -77.7]}
-                    ]
-                },
-                'Nariño': {
-                    descripcion: 'Nariño tiene costa pacífica y zona andina. Su capital es Pasto. La costa presenta clima cálido húmedo con precipitaciones abundantes.',
-                    alerta: 'Monitoreo volcánico del Galeras activo.',
-                    coordenadas: {lat: 1.8, lon: -78.0},
-                    zoom: 7,
-                    alertasActivas: [
-                        {nombre: 'Tumaco - Puerto', nivel: 'alto', coords: [1.8, -78.8]},
-                        {nombre: 'Pasto - Volcán Galeras', nivel: 'medio', coords: [1.2, -77.3]}
                     ]
                 }
             }
@@ -127,21 +84,12 @@ $(document).ready(function() {
             coordenadas: {lat: 5.5, lon: -70.5},
             zoom: 7,
             departamentos: {
-                'Arauca': {
-                    descripcion: 'Arauca limita con Venezuela. Su capital es Arauca. Presenta sabanas con estación seca (diciembre-marzo) y lluviosa (abril-noviembre).',
-                    alerta: 'Riesgo de inundaciones en temporada de lluvias.',
-                    coordenadas: {lat: 7.0, lon: -70.8},
-                    zoom: 7,
-                    alertasActivas: [
-                        {nombre: 'Arauca - Río Arauca', nivel: 'medio', coords: [7.1, -70.8]},
-                        {nombre: 'Arauquita', nivel: 'bajo', coords: [7.0, -71.4]}
-                    ]
-                },
                 'Casanare': {
                     descripcion: 'Casanare es el departamento de los llanos orientales. Su capital es Yopal. Temperatura promedio de 26°C con marcada diferencia entre época seca y lluviosa.',
                     alerta: 'Temporada seca. Vigilancia de incendios de sabana.',
                     coordenadas: {lat: 5.3, lon: -71.5},
                     zoom: 7,
+                    estaciones: ['Yopal - Aeropuerto', 'Paz de Ariporo - Sabana', 'Villanueva - Estación Rural'],
                     alertasActivas: [
                         {nombre: 'Yopal - Periferia', nivel: 'alto', coords: [5.3, -72.4]},
                         {nombre: 'Paz de Ariporo', nivel: 'alto', coords: [5.9, -71.9]},
@@ -153,20 +101,11 @@ $(document).ready(function() {
                     alerta: 'Riesgo moderado de incendios en época seca.',
                     coordenadas: {lat: 4.0, lon: -73.0},
                     zoom: 7,
+                    estaciones: ['Villavicencio - Vanguardia', 'Granada - Estación Rural', 'San Martín - Sabana'],
                     alertasActivas: [
                         {nombre: 'Villavicencio - Zona rural', nivel: 'medio', coords: [4.2, -73.6]},
                         {nombre: 'Granada', nivel: 'alto', coords: [3.5, -73.7]},
                         {nombre: 'San Martín', nivel: 'bajo', coords: [3.7, -73.7]}
-                    ]
-                },
-                'Vichada': {
-                    descripcion: 'Vichada es el segundo departamento más grande de Colombia. Su capital es Puerto Carreño. Presenta sabanas extensas con clima cálido de 27°C.',
-                    alerta: 'Incendios de sabana en temporada seca.',
-                    coordenadas: {lat: 5.5, lon: -68.5},
-                    zoom: 7,
-                    alertasActivas: [
-                        {nombre: 'Puerto Carreño', nivel: 'alto', coords: [6.2, -67.5]},
-                        {nombre: 'Cumaribo - Sabana', nivel: 'medio', coords: [4.5, -69.8]}
                     ]
                 }
             }
@@ -177,124 +116,16 @@ $(document).ready(function() {
             coordenadas: {lat: 5, lon: -74},
             zoom: 6,
             departamentos: {
-                'Antioquia': {
-                    descripcion: 'Antioquia es uno de los departamentos más importantes. Su capital es Medellín. Clima variado: cálido en valles (28°C) a páramo (8°C) según altitud.',
-                    alerta: 'Monitoreo de calidad del aire en valle de Aburrá.',
-                    coordenadas: {lat: 6.5, lon: -75.5},
-                    zoom: 7,
-                    alertasActivas: [
-                        {nombre: 'Medellín - Valle de Aburrá', nivel: 'medio', coords: [6.2, -75.6]},
-                        {nombre: 'Urabá - Zona bananera', nivel: 'bajo', coords: [8.0, -76.6]}
-                    ]
-                },
-                'Boyacá': {
-                    descripcion: 'Boyacá tiene gran altitud andina. Su capital es Tunja. Temperaturas entre 8-18°C según altitud. Zona de páramos importantes.',
-                    alerta: 'Heladas nocturnas en zonas altas.',
-                    coordenadas: {lat: 5.5, lon: -73.0},
-                    zoom: 7,
-                    alertasActivas: [
-                        {nombre: 'Tunja - Centro', nivel: 'bajo', coords: [5.5, -73.4]},
-                        {nombre: 'Sogamoso', nivel: 'medio', coords: [5.7, -72.9]}
-                    ]
-                },
-                'Caldas': {
-                    descripcion: 'Caldas está en la región cafetera. Su capital es Manizales. Clima variado: cálido (24-28°C) en valles a frío (12-16°C) en zonas altas.',
-                    alerta: 'Vigilancia actividad volcánica Nevado del Ruiz.',
-                    coordenadas: {lat: 5.1, lon: -75.5},
-                    zoom: 8,
-                    alertasActivas: [
-                        {nombre: 'Manizales - Zona volcánica', nivel: 'alto', coords: [5.1, -75.5]},
-                        {nombre: 'Nevado del Ruiz', nivel: 'medio', coords: [4.9, -75.3]}
-                    ]
-                },
-                'Cundinamarca': {
-                    descripcion: 'Cundinamarca rodea a Bogotá. Su capital es Bogotá D.C. Clima de sabana (14°C) en altiplano, cálido en zonas bajas (24-28°C).',
-                    alerta: 'Monitoreo de calidad del aire en Bogotá.',
-                    coordenadas: {lat: 5.0, lon: -74.0},
-                    zoom: 7,
-                    alertasActivas: [
-                        {nombre: 'Bogotá - Localidad Usme', nivel: 'medio', coords: [4.6, -74.1]},
-                        {nombre: 'Soacha - Zona alta', nivel: 'medio', coords: [4.6, -74.2]}
-                    ]
-                },
-                'Huila': {
-                    descripcion: 'Huila tiene territorio entre cordilleras. Su capital es Neiva. Clima cálido seco en valle del Magdalena (28°C), templado en zonas altas.',
-                    alerta: 'Riesgo de incendios forestales en época seca.',
-                    coordenadas: {lat: 2.5, lon: -75.5},
-                    zoom: 7,
-                    alertasActivas: [
-                        {nombre: 'Neiva - Periferia', nivel: 'alto', coords: [2.9, -75.3]},
-                        {nombre: 'Desierto de la Tatacoa', nivel: 'alto', coords: [3.2, -75.2]}
-                    ]
-                },
-                'Norte de Santander': {
-                    descripcion: 'Norte de Santander limita con Venezuela. Su capital es Cúcuta. Clima cálido (28°C) en valles, templado en zonas montañosas.',
-                    alerta: 'Monitoreo fronterizo. Condiciones de sequía.',
-                    coordenadas: {lat: 7.9, lon: -72.5},
-                    zoom: 7,
-                    alertasActivas: [
-                        {nombre: 'Cúcuta - Zona metropolitana', nivel: 'medio', coords: [7.9, -72.5]},
-                        {nombre: 'Tibú - Catatumbo', nivel: 'alto', coords: [8.6, -72.7]}
-                    ]
-                },
-                'Quindío': {
-                    descripcion: 'Quindío es el departamento más pequeño. Su capital es Armenia. Clima templado cafetero (18-22°C) con lluvias bimodales.',
-                    alerta: 'Sin alertas importantes. Condiciones normales.',
-                    coordenadas: {lat: 4.5, lon: -75.7},
-                    zoom: 9,
-                    alertasActivas: [
-                        {nombre: 'Armenia - Centro', nivel: 'bajo', coords: [4.5, -75.7]}
-                    ]
-                },
-                'Risaralda': {
-                    descripcion: 'Risaralda es parte del eje cafetero. Su capital es Pereira. Clima templado (18-22°C) en zona cafetera, cálido en valle del Cauca.',
-                    alerta: 'Monitoreo de deslizamientos en zona montañosa.',
-                    coordenadas: {lat: 5.0, lon: -75.9},
-                    zoom: 8,
-                    alertasActivas: [
-                        {nombre: 'Pereira - Ladera', nivel: 'medio', coords: [4.8, -75.7]},
-                        {nombre: 'Dosquebradas', nivel: 'bajo', coords: [4.8, -75.7]}
-                    ]
-                },
                 'Santander': {
-                    descripcion: 'Santander tiene topografía montañosa. Su capital es Bucaramanga. Clima variado: cálido en valles (28°C), templado en mesetas (20-24°C), frío en alturas (12-16°C). Presenta dos temporadas secas (diciembre-marzo y julio-agosto) y dos lluviosas (abril-junio y septiembre-noviembre).',
-                    alerta: 'Condiciones de baja humedad en área metropolitana. Riesgo de incendios forestales en zonas de bosque seco. Temperatura elevada en el Valle del Magdalena.',
+                    descripcion: 'Santander tiene topografía montañosa. Su capital es Bucaramanga. Clima variado: cálido en valles (28°C), templado en mesetas (20-24°C), frío en alturas (12-16°C).',
+                    alerta: 'Condiciones de baja humedad en área metropolitana. Riesgo de incendios forestales.',
                     coordenadas: {lat: 7.1, lon: -73.1},
                     zoom: 7,
+                    estaciones: ['Bucaramanga - Palonegro', 'Barrancabermeja - Puerto', 'San Gil - Río Fonce', 'Girón - Meseta'],
                     alertasActivas: [
                         {nombre: 'Bucaramanga - Zona norte', nivel: 'alto', coords: [7.2, -73.1]},
                         {nombre: 'Girón - Sector Menzuly', nivel: 'alto', coords: [7.1, -73.2]},
-                        {nombre: 'Floridablanca - Cañón del Chicamocha', nivel: 'medio', coords: [7.0, -73.0]},
-                        {nombre: 'San Gil - Río Fonce', nivel: 'medio', coords: [6.6, -73.1]},
-                        {nombre: 'Barrancabermeja - Puerto', nivel: 'bajo', coords: [7.1, -73.9]}
-                    ]
-                },
-                'Tolima': {
-                    descripcion: 'Tolima tiene valles cálidos y zonas montañosas. Su capital es Ibagué. Clima cálido en valle del Magdalena (28°C), templado en Ibagué (22°C).',
-                    alerta: 'Riesgo de incendios en temporada seca.',
-                    coordenadas: {lat: 4.5, lon: -75.0},
-                    zoom: 7,
-                    alertasActivas: [
-                        {nombre: 'Ibagué - Cañón del Combeima', nivel: 'medio', coords: [4.4, -75.2]},
-                        {nombre: 'Espinal', nivel: 'alto', coords: [4.2, -74.9]}
-                    ]
-                }
-            }
-        },
-        'insular': {
-            nombre: 'Región Insular',
-            descripcion: 'La región insular incluye San Andrés, Providencia y Santa Catalina en el Caribe. Clima tropical con influencia marítima.',
-            coordenadas: {lat: 12.5, lon: -81.7},
-            zoom: 10,
-            departamentos: {
-                'San Andrés y Providencia': {
-                    descripcion: 'Archipiélago en el mar Caribe. Capital: San Andrés. Clima tropical con temperatura promedio de 27°C. Vulnerable a huracanes entre junio y noviembre.',
-                    alerta: 'Temporada de huracanes. Monitoreo meteorológico intensivo.',
-                    coordenadas: {lat: 12.6, lon: -81.7},
-                    zoom: 10,
-                    alertasActivas: [
-                        {nombre: 'San Andrés - Costa este', nivel: 'medio', coords: [12.6, -81.7]},
-                        {nombre: 'Providencia - Zona norte', nivel: 'bajo', coords: [13.4, -81.4]}
+                        {nombre: 'Floridablanca - Cañón', nivel: 'medio', coords: [7.0, -73.0]}
                     ]
                 }
             }
@@ -372,7 +203,6 @@ $(document).ready(function() {
         
         if (!datosRegion) return;
 
-        // Si hay departamento específico, cargar sus datos
         if (departamentoActual && datosRegion.departamentos[departamentoActual]) {
             const datosDept = datosRegion.departamentos[departamentoActual];
             
@@ -380,24 +210,24 @@ $(document).ready(function() {
             $('#descripcionRegion').text(datosDept.descripcion);
             $('#mensajeAlerta').text(datosDept.alerta);
 
-            // Inicializar mapa con coordenadas del departamento
-            if ($('#seccionBrigadista').is(':visible')) {
+            const usuarioActual = JSON.parse(localStorage.getItem('usuarioActual'));
+            if (usuarioActual && usuarioActual.rol === 'brigadista' && $('#seccionBrigadista').is(':visible')) {
                 if (mapaLeaflet) {
                     mapaLeaflet.remove();
                 }
                 inicializarMapa(datosDept.coordenadas.lat, datosDept.coordenadas.lon, datosDept.zoom, datosDept.alertasActivas);
             }
 
-            // Llenar dropdown de departamentos para investigador
             llenarDepartamentos(datosRegion, departamentoActual);
+            llenarEstaciones(datosDept.estaciones);
 
         } else {
-            // Mostrar info general de la región
             $('#bannerRegion').text(datosRegion.nombre);
             $('#descripcionRegion').text(datosRegion.descripcion);
             $('#mensajeAlerta').text('Selecciona un departamento específico para ver alertas detalladas.');
 
-            if ($('#seccionBrigadista').is(':visible')) {
+            const usuarioActual = JSON.parse(localStorage.getItem('usuarioActual'));
+            if (usuarioActual && usuarioActual.rol === 'brigadista' && $('#seccionBrigadista').is(':visible')) {
                 if (mapaLeaflet) {
                     mapaLeaflet.remove();
                 }
@@ -416,10 +246,29 @@ $(document).ready(function() {
             const selected = dept === deptSeleccionado ? 'selected' : '';
             $filtroDept.append(`<option value="${dept}" ${selected}>${dept}</option>`);
         });
+        
+        // Agregar también selector para series históricas
+        const $inputDept = $('#inputDepartamento');
+        if ($inputDept.length && $inputDept.is('select')) {
+            $inputDept.empty().append('<option value="">Seleccionar departamento</option>');
+            Object.keys(datosRegion.departamentos).forEach(dept => {
+                $inputDept.append(`<option value="${dept}">${dept}</option>`);
+            });
+        }
+    }
+
+    function llenarEstaciones(estaciones) {
+        const $inputEstacion = $('#inputEstacion');
+        if ($inputEstacion.length && $inputEstacion.is('select')) {
+            $inputEstacion.empty().append('<option value="">Seleccionar estación</option>');
+            estaciones.forEach(estacion => {
+                $inputEstacion.append(`<option value="${estacion}">${estacion}</option>`);
+            });
+        }
     }
 
     // ========================================
-    // INICIALIZAR MAPA
+    // INICIALIZAR MAPA (SOLO BRIGADISTA)
     // ========================================
     
     function inicializarMapa(lat, lon, zoom, alertas) {
@@ -435,7 +284,6 @@ $(document).ready(function() {
             maxZoom: 19
         }).addTo(mapaLeaflet);
 
-        // Agregar marcadores de alertas
         alertas.forEach(alerta => {
             let icono;
             let colorTexto;
@@ -495,11 +343,10 @@ $(document).ready(function() {
         }
     }
 
-// ========================================
+    // ========================================
     // FUNCIONALIDAD BRIGADISTA
     // ========================================
     
-    // Seleccionar tipo de alerta
     $('.btn-tipo').click(function() {
         $('.btn-tipo').removeClass('activo');
         $(this).addClass('activo');
@@ -507,24 +354,20 @@ $(document).ready(function() {
         console.log('Tipo de alerta seleccionado:', tipo);
     });
 
-    // Seleccionar destinatarios
     $('.destinatario-item').click(function() {
         $(this).toggleClass('seleccionado');
         const tipo = $(this).data('tipo');
         console.log('Destinatario seleccionado:', tipo);
     });
 
-    // Modificar mensaje
     $('#btnModificar').click(function() {
         $('.mensaje-area').prop('readonly', false).focus();
     });
 
-    // Reiniciar mensaje
     $('#btnReiniciar').click(function() {
         $('.mensaje-area').val('');
     });
 
-    // Accesos rápidos
     $('.card-acceso').click(function() {
         const accion = $(this).data('accion');
         
@@ -538,21 +381,103 @@ $(document).ready(function() {
         }
     });
 
+    // DESCARGAR GUÍAS - BRIGADISTA
+    $('.btn-descargar-guia').click(function() {
+        const nombreGuia = $(this).data('guia');
+        descargarPDF(nombreGuia);
+    });
+
+    function descargarPDF(nombreArchivo) {
+        // Crear contenido PDF simulado
+        const contenidoPDF = `%PDF-1.4
+1 0 obj
+<<
+/Type /Catalog
+/Pages 2 0 R
+>>
+endobj
+2 0 obj
+<<
+/Type /Pages
+/Kids [3 0 R]
+/Count 1
+>>
+endobj
+3 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/Resources <<
+/Font <<
+/F1 4 0 R
+>>
+>>
+/MediaBox [0 0 612 792]
+/Contents 5 0 R
+>>
+endobj
+4 0 obj
+<<
+/Type /Font
+/Subtype /Type1
+/BaseFont /Helvetica
+>>
+endobj
+5 0 obj
+<<
+/Length 100
+>>
+stream
+BT
+/F1 24 Tf
+100 700 Td
+(${nombreArchivo}) Tj
+ET
+endstream
+endobj
+xref
+0 6
+0000000000 65535 f
+0000000009 00000 n
+0000000058 00000 n
+0000000115 00000 n
+0000000262 00000 n
+0000000341 00000 n
+trailer
+<<
+/Size 6
+/Root 1 0 R
+>>
+startxref
+492
+%%EOF`;
+
+        const blob = new Blob([contenidoPDF], { type: 'application/pdf' });
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = nombreArchivo + '.pdf';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        window.URL.revokeObjectURL(url);
+        
+        alert('✅ Guía descargada: ' + nombreArchivo + '.pdf');
+    }
+
     // ========================================
-    // FUNCIONALIDAD INVESTIGADOR
+    // FUNCIONALIDAD INVESTIGADOR - DESCARGAS CSV
     // ========================================
     
-    // Cambio de departamento en filtro
     $('#filtroDepartamento').change(function() {
         const deptSeleccionado = $(this).val();
         
         if (deptSeleccionado) {
-            // Recargar página con nuevo departamento
             window.location.href = 'region.html?region=' + regionActual + '&departamento=' + deptSeleccionado;
         }
     });
 
-    // Botones de datos
+    // DESCARGAR DATOS - ALERTAS TEMPRANAS
     $('#btnDescargarDatos').click(function() {
         const dept = $('#filtroDepartamento').val();
         const severidad = $('#filtroSeveridad').val();
@@ -563,8 +488,13 @@ $(document).ready(function() {
             return;
         }
         
-        console.log('Descargando datos:', {dept, severidad, fecha});
-        alert('Descargando datos de alertas tempranas...\n\nDepartamento: ' + dept + '\nSeveridad: ' + (severidad || 'Todas') + '\nFecha: ' + (fecha || 'Todas las fechas') + '\n\nFormato: CSV');
+        // Crear CSV con datos de ejemplo
+        let csvContent = 'Fecha,Departamento,Municipio,Severidad,Temperatura,Humedad,Velocidad_Viento\n';
+        csvContent += `2025-10-15,${dept},Zona Norte,${severidad || 'Alto'},32,25,15\n`;
+        csvContent += `2025-10-14,${dept},Zona Sur,${severidad || 'Medio'},30,30,12\n`;
+        csvContent += `2025-10-13,${dept},Zona Centro,${severidad || 'Bajo'},28,35,10\n`;
+        
+        descargarCSV(csvContent, `Alertas_${dept}_${fecha || 'todas_fechas'}.csv`);
     });
 
     $('#btnRegistrarDB').click(function() {
@@ -575,7 +505,7 @@ $(document).ready(function() {
             return;
         }
         
-        alert('Registrando información en la base de datos...\n\nDepartamento: ' + dept + '\n\nLos datos quedarían almacenados para análisis futuro.');
+        alert('✅ Datos registrados en base de datos.\n\nDepartamento: ' + dept + '\n\nLos datos quedarían almacenados para análisis futuro.');
     });
 
     $('#btnVerMapa').click(function() {
@@ -586,10 +516,10 @@ $(document).ready(function() {
             return;
         }
         
-        alert('Abriendo mapa interactivo de alertas...\n\nDepartamento: ' + dept + '\n\nSe mostraría un mapa detallado con todas las alertas históricas de esta zona.');
+        alert('Abriendo mapa interactivo de alertas...\n\nDepartamento: ' + dept + '\n\nSe mostraría un mapa detallado con todas las alertas históricas.');
     });
 
-    // Botones de series históricas
+    // SERIES HISTÓRICAS
     $('#btnConsultar').click(function() {
         const departamento = $('#inputDepartamento').val();
         const estacion = $('#inputEstacion').val();
@@ -610,15 +540,23 @@ $(document).ready(function() {
             departamento, estacion, fechaInicio, fechaFin, variables
         });
         
-        alert('Consultando series históricas...\n\nDepartamento: ' + departamento + '\nEstación: ' + estacion + '\nVariables: ' + variables.join(', ') + '\nPeriodo: ' + fechaInicio + ' a ' + fechaFin + '\n\nLos datos se mostrarían en la interfaz.');
+        alert('✅ Consulta realizada.\n\nDepartamento: ' + departamento + '\nEstación: ' + estacion + '\nVariables: ' + variables.join(', ') + '\nPeriodo: ' + fechaInicio + ' a ' + fechaFin);
     });
 
     $('#btnDescargar').click(function() {
         const formato = $('input[name="formato"]:checked').val();
         const departamento = $('#inputDepartamento').val();
+        const estacion = $('#inputEstacion').val();
+        const fechaInicio = $('#fechaInicio').val();
+        const fechaFin = $('#fechaFin').val();
         
-        if (!departamento) {
-            alert('Por favor ingresa un departamento.');
+        const variables = [];
+        $('input[name="variable"]:checked').each(function() {
+            variables.push($(this).val());
+        });
+        
+        if (!departamento || !estacion) {
+            alert('Por favor completa los campos de departamento y estación.');
             return;
         }
         
@@ -627,8 +565,39 @@ $(document).ready(function() {
             return;
         }
         
-        console.log('Descargando en formato:', formato);
-        alert('Descargando archivo en formato ' + formato.toUpperCase() + '...\n\nDepartamento: ' + departamento + '\n\nEl archivo se descargaría automáticamente.');
+        // Crear CSV con datos históricos de ejemplo
+        let csvContent = 'Fecha,' + variables.join(',') + '\n';
+        
+        // Generar datos simulados
+        const inicio = new Date(fechaInicio || '2020-01-01');
+        const fin = new Date(fechaFin || '2025-10-16');
+        const diasTotal = Math.floor((fin - inicio) / (1000 * 60 * 60 * 24));
+        const muestras = Math.min(diasTotal, 100); // Limitar a 100 registros
+        
+        for (let i = 0; i < muestras; i++) {
+            const fecha = new Date(inicio);
+            fecha.setDate(fecha.getDate() + Math.floor(i * diasTotal / muestras));
+            const fechaStr = fecha.toISOString().split('T')[0];
+            
+            let fila = fechaStr;
+            variables.forEach(variable => {
+                if (variable === 'temperatura') {
+                    fila += ',' + (20 + Math.random() * 15).toFixed(1);
+                } else if (variable === 'precipitacion') {
+                    fila += ',' + (Math.random() * 100).toFixed(1);
+                } else if (variable === 'humedad') {
+                    fila += ',' + (40 + Math.random() * 40).toFixed(1);
+                } else if (variable === 'viento') {
+                    fila += ',' + (5 + Math.random() * 20).toFixed(1);
+                } else if (variable === 'radiacion') {
+                    fila += ',' + (100 + Math.random() * 300).toFixed(1);
+                }
+            });
+            csvContent += fila + '\n';
+        }
+        
+        const nombreArchivo = `Series_Historicas_${departamento}_${estacion.replace(/\s/g, '_')}_${fechaInicio || '2020-01-01'}_${fechaFin || '2025-10-16'}.csv`;
+        descargarCSV(csvContent, nombreArchivo);
     });
 
     $('#btnVisualizarGrafico').click(function() {
@@ -639,11 +608,25 @@ $(document).ready(function() {
             return;
         }
         
-        alert('Visualizando gráfico de datos...\n\nDepartamento: ' + departamento + '\n\nSe abriría una ventana con gráficos interactivos de las series históricas seleccionadas.');
+        alert('📊 Visualizando gráfico de datos...\n\nDepartamento: ' + departamento + '\n\nSe abriría una ventana con gráficos interactivos de las series históricas seleccionadas.');
     });
 
+    function descargarCSV(contenido, nombreArchivo) {
+        const blob = new Blob([contenido], { type: 'text/csv;charset=utf-8;' });
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = nombreArchivo;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        window.URL.revokeObjectURL(url);
+        
+        alert('✅ Archivo descargado: ' + nombreArchivo);
+    }
+
     // ========================================
-    // MODAL LOGIN
+    // BOTÓN DE USUARIO
     // ========================================
     
     $('#botonUsuario').click(function() {
@@ -651,8 +634,7 @@ $(document).ready(function() {
         
         if (usuarioActual) {
             const confirmar = confirm('¿Deseas cerrar sesión?\n\nUsuario: ' + usuarioActual.nombre + '\nRol: ' + usuarioActual.rol);
-            if (confirmar) {
-                localStorage.removeItem('usuarioActual');
+            if (confirmar) {localStorage.removeItem('usuarioActual');
                 alert('Sesión cerrada correctamente.');
                 window.location.href = 'index.html';
             }
