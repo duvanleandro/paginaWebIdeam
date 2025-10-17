@@ -1135,7 +1135,7 @@ body {
     position: absolute;
     top: 100%;
     left: 0;
-    right: 40px;
+    right: 0; /* Cambiar de "right: 40px" a "right: 0" */
     background: white;
     border: 2px solid #333;
     border-top: none;
@@ -1145,6 +1145,7 @@ body {
     display: none;
     z-index: 1000;
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    margin-right: 40px; /* Agregar esto para compensar el botón */
 }
 
 .sugerencias-busqueda.activo {

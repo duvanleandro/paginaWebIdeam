@@ -455,3 +455,94 @@
     }
 }
 
+/* Botones especiales de notificación */
+.btn-enviar {
+    background: linear-gradient(135deg, #66bb6a 0%, #43a047 100%);
+    color: white;
+    font-weight: bold;
+}
+
+.btn-enviar:hover {
+    background: linear-gradient(135deg, #43a047 0%, #2e7d32 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(67, 160, 71, 0.4);
+}
+
+.btn-compartir {
+    background: linear-gradient(135deg, #42a5f5 0%, #1976d2 100%);
+    color: white;
+    font-weight: bold;
+}
+
+.btn-compartir:hover {
+    background: linear-gradient(135deg, #1976d2 0%, #0d47a1 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(25, 118, 210, 0.4);
+}
+
+/* Modal para compartir enlace */
+.modal-compartir {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    z-index: 10000;
+    max-width: 500px;
+    width: 90%;
+}
+
+.modal-compartir.activo {
+    display: block;
+}
+
+.modal-compartir h3 {
+    color: #2e7d32;
+    margin-bottom: 15px;
+}
+
+.enlace-compartir {
+    background: #f5f5f5;
+    padding: 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    margin: 15px 0;
+    word-break: break-all;
+    font-family: monospace;
+    font-size: 14px;
+}
+
+.btn-copiar {
+    background: #66bb6a;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.btn-copiar:hover {
+    background: #43a047;
+}
+
+.btn-cerrar-modal {
+    background: #f44336;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-left: 10px;
+    transition: all 0.3s;
+}
+
+.btn-cerrar-modal:hover {
+    background: #d32f2f;
+}

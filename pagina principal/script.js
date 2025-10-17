@@ -269,7 +269,7 @@ datosAutocompletado.forEach(region => {
 });
 
 // Input de búsqueda
-const $inputBusqueda = $('#inputBusqueda, .barra-busqueda input[type="text"]');
+const $inputBusqueda = $('.barra-busqueda input[type="text"]');
 const $sugerencias = $('#sugerenciasBusqueda');
 
 // Evento al escribir

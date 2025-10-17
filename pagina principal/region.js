@@ -368,6 +368,89 @@ $(document).ready(function() {
         $('.mensaje-area').val('');
     });
 
+    // ENVIAR NOTIFICACIÓN
+$('#btnEnviarNotificacion').click(function() {
+    const zona = $('#zonaSeleccionada').text();
+    const tipoAlerta = $('.btn-tipo.activo').data('tipo') || 'No seleccionado';
+    const destinatarios = [];
+    
+    $('.destinatario-item.seleccionado').each(function() {
+        destinatarios.push($(this).data('tipo'));
+    });
+    
+    const mensaje = $('.mensaje-area').val();
+    
+    if (zona === 'Ninguna') {
+        alert('⚠️ Por favor selecciona una zona en el mapa primero.');
+        return;
+    }
+    
+    if (destinatarios.length === 0) {
+        alert('⚠️ Por favor selecciona al menos un destinatario.');
+        return;
+    }
+    
+    alert(`✅ Notificación enviada exitosamente!\n\nZona: ${zona}\nTipo de alerta: ${tipoAlerta}\nDestinatarios: ${destinatarios.join(', ')}\n\nLa brigada ha sido notificada.`);
+    
+    console.log('Notificación enviada:', {zona, tipoAlerta, destinatarios, mensaje});
+});
+
+// COMPARTIR ENLACE
+$('#btnCompartirEnlace').click(function() {
+    const zona = $('#zonaSeleccionada').text();
+    const tipoAlerta = $('.btn-tipo.activo').data('tipo') || 'sin-tipo';
+    
+    if (zona === 'Ninguna') {
+        alert('⚠️ Por favor selecciona una zona en el mapa primero.');
+        return;
+    }
+    
+    // Generar enlace simulado
+    const enlace = `https://ideam.gov.co/alerta?zona=${encodeURIComponent(zona)}&tipo=${tipoAlerta}&fecha=${new Date().toISOString().split('T')[0]}`;
+    
+    // Crear modal si no existe
+    if ($('#modalCompartir').length === 0) {
+        const modalHTML = `
+            <div id="modalCompartir" class="modal-compartir">
+                <h3><i class="fas fa-share-alt"></i> Compartir Alerta</h3>
+                <p>Comparte este enlace con tu equipo:</p>
+                <div class="enlace-compartir" id="enlaceGenerado"></div>
+                <div style="text-align: center; margin-top: 20px;">
+                    <button class="btn-copiar" id="btnCopiarEnlace">
+                        <i class="fas fa-copy"></i> Copiar enlace
+                    </button>
+                    <button class="btn-cerrar-modal" id="btnCerrarModalCompartir">
+                        <i class="fas fa-times"></i> Cerrar
+                    </button>
+                </div>
+            </div>
+        `;
+        $('body').append(modalHTML);
+        
+        // Evento copiar
+        $(document).on('click', '#btnCopiarEnlace', function() {
+            const enlaceTexto = $('#enlaceGenerado').text();
+            navigator.clipboard.writeText(enlaceTexto).then(() => {
+                $(this).html('<i class="fas fa-check"></i> ¡Copiado!');
+                setTimeout(() => {
+                    $(this).html('<i class="fas fa-copy"></i> Copiar enlace');
+                }, 2000);
+            });
+        });
+        
+        // Evento cerrar
+        $(document).on('click', '#btnCerrarModalCompartir', function() {
+            $('#modalCompartir').removeClass('activo');
+            $('#superposicion').removeClass('activo');
+        });
+    }
+    
+    // Mostrar modal con enlace
+    $('#enlaceGenerado').text(enlace);
+    $('#modalCompartir').addClass('activo');
+    $('#superposicion').addClass('activo');
+});
+
     $('.card-acceso').click(function() {
         const accion = $(this).data('accion');
         
