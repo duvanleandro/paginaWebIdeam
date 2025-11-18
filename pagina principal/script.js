@@ -130,7 +130,7 @@ $(document).ready(function() {
         } else if (texto.includes('Noticias y eventos')) {
             seccionID = '#noticias-eventos';
         } else if (texto.includes('Misión y Visión')) {
-            seccionID = '#mision-vision';
+            seccionID = '#quienes-somos';
         } else if (texto.includes('Sedes y contacto')) {
             seccionID = '.pie-pagina';
         } else if (texto.includes('Reportar incidencia')) {
