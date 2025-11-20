@@ -1,283 +1,538 @@
-# MANUAL DE USUARIO
-## Portal Web IDEAM
+# 📘 MANUAL DE USUARIO - PORTAL IDEAM
+## Guía Visual Paso a Paso
 
 ---
 
-### **Introducción**
+## 📖 ÍNDICE DE TAREAS
 
-Este manual explica cómo usar el portal web del IDEAM (Instituto de Hidrología, Meteorología y Estudios Ambientales). El portal permite consultar información sobre alertas ambientales, pronósticos del clima, guías de seguridad y más.
-
----
-
-## 1. PÁGINA PRINCIPAL
-
-### 1.1 Acceso al Portal
-
-Para acceder al portal, abre el archivo `index.html` en tu navegador web.
-
-(Foto: Página principal del portal IDEAM con el banner verde y el menú)
-
-### 1.2 Elementos del Encabezado
-
-El encabezado contiene tres elementos principales:
-
-- **Botón de menú** (☰): Abre el menú lateral de navegación
-- **Barra de búsqueda**: Permite buscar información en el portal
-- **Botón de usuario** (👤): Permite iniciar sesión o registrarse
-
-(Foto: Encabezado del portal mostrando los tres botones)
+| # | Tarea | Página |
+|---|-------|--------|
+| 1 | Crear una cuenta en el portal | ⬇️ |
+| 2 | Iniciar sesión | ⬇️ |
+| 3 | Buscar información por región | ⬇️ |
+| 4 | Ver alertas en el mapa | ⬇️ |
+| 5 | Consultar pronóstico del clima | ⬇️ |
+| 6 | Reportar una incidencia | ⬇️ |
+| 7 | Descargar guías de seguridad (Brigadista) | ⬇️ |
+| 8 | Notificar alerta a brigada (Brigadista) | ⬇️ |
+| 9 | Consultar datos históricos (Investigador) | ⬇️ |
+| 10 | Exportar datos en diferentes formatos (Investigador) | ⬇️ |
 
 ---
 
-## 2. REGISTRO E INICIO DE SESIÓN
+## 🔐 TAREA 1: CREAR UNA CUENTA
 
-### 2.1 Crear una Cuenta
+### ✅ PRECONDICIONES
+┌─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐ 
+│ ☑ Navegador web actualizado │ │ (Chrome, Firefox, Edge, Safari) │ │ ☑ Conexión a internet │ │ ☑ Correo electrónico válido │ 
+└─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 
-1. Haz clic en el botón de usuario (👤) en la esquina superior derecha
-2. En el formulario que aparece, haz clic en "Regístrate"
-3. Completa los campos:
-   - Nombre completo
-   - Correo electrónico
-   - Contraseña
-   - Rol (Brigadista o Investigador)
-4. Haz clic en "Crear cuenta"
 
-(Foto: Formulario de registro con los campos llenos)
+### 📋 PROCESO
 
-### 2.2 Iniciar Sesión
-
-1. Haz clic en el botón de usuario (👤)
-2. Ingresa tu usuario o correo
-3. Ingresa tu contraseña
-4. Haz clic en "Ingresar"
-
-(Foto: Formulario de inicio de sesión)
-
-Una vez que inicies sesión, verás un mensaje de bienvenida en la esquina inferior derecha.
-
-(Foto: Mensaje de bienvenida después de iniciar sesión)
+#### PASO 1: Abrir el portal
+![Paso 1 - Abrir portal](imagenes/01-registro/paso1-abrir-portal.png)
+> **Imagen debe mostrar:** Navegador con `index.html` abierto, flecha señalando la barra de direcciones
 
 ---
 
-## 3. MENÚ DE NAVEGACIÓN
-
-### 3.1 Abrir el Menú Lateral
-
-Haz clic en el botón de menú (☰) en la esquina superior izquierda.
-
-(Foto: Menú lateral abierto mostrando las opciones)
-
-### 3.2 Secciones del Menú
-
-El menú tiene tres secciones:
-
-**A) Regiones**
-- Permite seleccionar una región de Colombia
-- Al seleccionar una región, aparecen los departamentos correspondientes
-- Haz clic en un departamento para ver información específica
-
-(Foto: Selector de regiones con la lista de departamentos desplegada)
-
-**B) Enlaces Rápidos**
-- Alertas tempranas
-- Pronóstico meteorológico
-- Guías y protocolos
-- Reportar incidencia
-- Noticias y eventos
-- Sedes y contacto
-
-**C) ¿Quiénes somos?**
-- Misión y Visión
-- Nuestro equipo
-- Sedes
+#### PASO 2: Click en el icono de usuario
+![Paso 2 - Click usuario](imagenes/01-registro/paso2-click-usuario.png)
+> **Imagen debe mostrar:** Pantalla principal con flecha grande apuntando al icono 👤 en esquina superior derecha
 
 ---
 
-## 4. BARRA DE BÚSQUEDA
-
-### 4.1 Buscar Información
-
-1. Escribe en la barra de búsqueda lo que deseas encontrar
-2. El sistema mostrará sugerencias automáticas de regiones y departamentos
-3. Haz clic en una sugerencia para ir directamente a esa página
-
-(Foto: Barra de búsqueda con sugerencias desplegadas)
+#### PASO 3: Click en "Regístrate"
+![Paso 3 - Click Regístrate](imagenes/01-registro/paso3-click-registrate.png)
+> **Imagen debe mostrar:** Modal de login con círculo rojo alrededor del enlace "Regístrate"
 
 ---
 
-## 5. SECCIONES DE LA PÁGINA PRINCIPAL
-
-### 5.1 Información del IDEAM
-
-En la página principal encontrarás:
-- ¿Quiénes somos?
-- Misión
-- Visión
-
-(Foto: Sección de "¿Quiénes somos?" con el texto descriptivo)
-
-### 5.2 Alertas Recientes
-
-Esta sección muestra:
-- **Mapa de Colombia** con marcadores de alertas
-- **Lista de alertas** con nivel de riesgo (Alto, Medio, Bajo)
-
-Puedes hacer clic en las alertas para ver más detalles.
-
-(Foto: Sección de alertas con el mapa y la lista de alertas)
-
-### 5.3 Pronóstico del Clima
-
-1. Selecciona una ubicación del menú desplegable
-2. Verás el pronóstico para las próximas horas
-3. La línea roja indica la hora actual
-
-(Foto: Selector de ubicación y pronóstico del clima)
-
-### 5.4 Guías y Protocolos
-
-Tarjetas informativas sobre:
-- Prevención de incendios forestales
-- Seguridad en campo
-- Primeros auxilios
-- Conservación ambiental
-- Manejo de equipos
-
-Haz clic en las tarjetas laterales para cambiar entre guías.
-
-(Foto: Carrusel de guías mostrando la tarjeta central)
-
-### 5.5 Noticias y Eventos
-
-Tarjetas con noticias recientes del IDEAM. Haz clic en cualquier tarjeta para ver más información.
-
-(Foto: Cuadrícula de noticias y eventos)
+#### PASO 4: Completar el formulario de registro
+![Paso 4 - Llenar formulario](imagenes/01-registro/paso4-llenar-formulario.png)
+> **Imagen debe mostrar:** Formulario con números circulares señalando cada campo:
+> - ① Nombre completo
+> - ② Correo electrónico
+> - ③ Contraseña
+> - ④ Seleccionar rol (Brigadista/Investigador)
 
 ---
 
-## 6. REPORTAR INCIDENCIAS
-
-### 6.1 Cómo Reportar
-
-1. Debes estar autenticado (haber iniciado sesión)
-2. Haz clic en "Reportar incidencia" en el menú o en el footer
-3. Completa el formulario:
-   - Tipo de incidencia (Incendio forestal, Inundación, Deslizamiento, Otro)
-   - Descripción detallada
-   - Adjuntar archivo (opcional)
-4. Haz clic en "Enviar incidencia"
-
-(Foto: Formulario de reportar incidencia)
+#### PASO 5: Click en "Crear cuenta"
+![Paso 5 - Crear cuenta](imagenes/01-registro/paso5-crear-cuenta.png)
+> **Imagen debe mostrar:** Botón "Crear cuenta" con flecha grande apuntando hacia él
 
 ---
 
-## 7. PÁGINA DE REGIÓN
+### ✅ POSTCONDICIONES
+┌────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│ ✓ Cuenta creada exitosamente │ │ ✓ Mensaje de confirmación visible │ │ ✓ Ya puedes iniciar sesión │ 
+└────────────────────────────────────────────────────────────────────────────────────────────────────┘
 
-Al seleccionar una región o departamento, accederás a una página específica con información detallada.
-
-(Foto: Página de región con el banner de la región seleccionada)
-
-### 7.1 Vista para Brigadistas
-
-Si tu rol es **Brigadista**, verás:
-
-**A) Alertas de la Región**
-- Mapa interactivo con zonas de riesgo
-- Leyenda de colores (Alto, Medio, Bajo, Sin Riesgo)
-
-(Foto: Mapa de alertas con la leyenda de colores)
-
-**B) Notificar Alerta**
-- Selecciona una zona en el mapa
-- Elige el tipo de alerta
-- Selecciona destinatarios (Co-investigadores, Brigada, Otro)
-- Escribe un mensaje
-- Envía la notificación o comparte el enlace
-
-(Foto: Sección de notificar alerta con los botones de tipo de alerta)
-
-**C) Biblioteca de Recursos**
-- Descarga guías en PDF:
-  - Prevención de Incendios Forestales
-  - Seguridad en Campo
-  - Primeros Auxilios
-  - Protocolos de Evacuación
-
-(Foto: Lista de guías disponibles para descargar)
-
-**D) Accesos Rápidos**
-- Pronóstico meteorológico
-- Reportar incidencia
-
-### 7.2 Vista para Investigadores
-
-Si tu rol es **Investigador**, verás:
-
-**A) Consultar y Registrar Alertas Tempranas**
-- Filtros por departamento, severidad y fecha
-- Botones para descargar datos, registrar en base de datos y ver mapa
-
-(Foto: Filtros de búsqueda para investigadores)
-
-**B) Análisis de Series Históricas**
-- Selecciona departamento y estación meteorológica
-- Elige variables (Precipitación, Temperatura, Humedad, Viento, Radiación solar)
-- Define rango de fechas
-- Selecciona formato de descarga (CSV, Excel, PDF)
-- Consulta, descarga o visualiza gráficos
-
-(Foto: Formulario de análisis de series históricas)
-
-**C) Accesos Rápidos**
-- Pronóstico meteorológico
-- Reportar incidencia
 
 ---
 
-## 8. FOOTER (PIE DE PÁGINA)
+## 🔑 TAREA 2: INICIAR SESIÓN
 
-El footer contiene información de contacto y enlaces importantes:
+### ✅ PRECONDICIONES
+┌────────────────────────────────────────────────────────────────────────┐ 
+│ ☑ Tener una cuenta creada (Tarea 1) │ │ ☑ Portal abierto en navegador │ 
+└────────────────────────────────────────────────────────────────────────┘
 
-- **Nuestras Sedes**: Bogotá D.C., Bucaramanga, Medellín, Cali
-- **Contacto**: Línea nacional, email, botón para reportar incidencia
-- **Información**: Términos y condiciones, Política de privacidad, Transparencia
 
-(Foto: Footer con las tres columnas de información)
+### 📋 PROCESO
 
----
-
-## 9. CONSEJOS DE USO
-
-- **Navegación rápida**: Usa la barra de búsqueda para encontrar regiones o departamentos rápidamente
-- **Alertas**: Las alertas se actualizan automáticamente en el mapa
-- **Pronóstico**: El pronóstico se actualiza cada 10 minutos
-- **Sesión**: Tu sesión se guarda localmente, no necesitas iniciar sesión cada vez
-- **Móvil**: El portal es responsive, funciona en celulares y tabletas
+#### PASO 1: Click en el icono de usuario
+![Paso 1 - Click usuario](imagenes/02-login/paso1-click-usuario.png)
+> **Imagen debe mostrar:** Flecha apuntando al icono 👤 en esquina superior derecha
 
 ---
 
-## 10. SOLUCIÓN DE PROBLEMAS
-
-**Problema**: No puedo ver el mapa
-- **Solución**: Asegúrate de tener conexión a internet
-
-**Problema**: Las sugerencias de búsqueda no aparecen
-- **Solución**: Escribe al menos 2 letras para ver sugerencias
-
-**Problema**: No puedo reportar una incidencia
-- **Solución**: Debes iniciar sesión primero
-
-**Problema**: El menú no se cierra
-- **Solución**: Presiona la tecla ESC o haz clic fuera del menú
+#### PASO 2: Ingresar correo electrónico
+![Paso 2 - Ingresar correo](imagenes/02-login/paso2-ingresar-correo.png)
+> **Imagen debe mostrar:** Campo de correo con ejemplo completado, marcado con ①
 
 ---
 
-## CONTACTO
-
-Para más información, contacta al IDEAM:
-- **Línea Nacional**: 01 8000 123 456
-- **Email**: contacto@ideam.gov.co
+#### PASO 3: Ingresar contraseña
+![Paso 3 - Ingresar contraseña](imagenes/02-login/paso3-ingresar-password.png)
+> **Imagen debe mostrar:** Campo de contraseña con asteriscos, marcado con ②
 
 ---
 
-**Fin del Manual de Usuario**
+#### PASO 4: Click en "Ingresar"
+![Paso 4 - Click Ingresar](imagenes/02-login/paso4-click-ingresar.png)
+> **Imagen debe mostrar:** Botón "Ingresar" resaltado con círculo verde
+
+---
+
+### ✅ POSTCONDICIONES
+┌───────────────────────────────────────────────────────────────────────────────────────────────────────────────┐ 
+│ ✓ Sesión iniciada correctamente │ │ ✓ Mensaje de bienvenida visible │ │ ✓ Icono de usuario muestra tu nombre │ 
+└───────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+---
+
+## 🗺️ TAREA 3: BUSCAR INFORMACIÓN POR REGIÓN
+
+### ✅ PRECONDICIONES
+┌─────────────────────────────────┐
+│ ☑ Portal abierto en navegador  │ 
+└─────────────────────────────────┘
+
+
+### 📋 PROCESO
+
+#### PASO 1: Click en el menú hamburguesa
+![Paso 1 - Abrir menú](imagenes/03-buscar-region/paso1-abrir-menu.png)
+> **Imagen debe mostrar:** Icono ☰ en esquina superior izquierda con flecha grande
+
+---
+
+#### PASO 2: Seleccionar una región
+![Paso 2 - Seleccionar región](imagenes/03-buscar-region/paso2-seleccionar-region.png)
+> **Imagen debe mostrar:** Menú lateral abierto con lista desplegable de regiones
+
+---
+
+#### PASO 3: Click en un departamento
+![Paso 3 - Click departamento](imagenes/03-buscar-region/paso3-click-departamento.png)
+> **Imagen debe mostrar:** Lista de departamentos con uno resaltado
+
+---
+
+### ✅ POSTCONDICIONES
+┌───────────────────────────────────────────────────────────────────────────────────────────────────────────┐ 
+│ ✓ Página de región cargada │ │ ✓ Banner con nombre del departamento │ │ ✓ Información específica visible │ 
+└───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+---
+
+## ⚠️ TAREA 4: VER ALERTAS EN EL MAPA
+
+### ✅ PRECONDICIONES
+┌────────────────────────────────────────────────────────────────────────┐ 
+│ ☑ Portal abierto en página principal │ │ ☑ Conexión a internet activa │ 
+└────────────────────────────────────────────────────────────────────────┘
+
+
+### 📋 PROCESO
+
+#### PASO 1: Ubicar la sección "Alertas Recientes"
+![Paso 1 - Ubicar sección](imagenes/04-ver-alertas/paso1-ubicar-seccion.png)
+> **Imagen debe mostrar:** Scroll hacia la sección de alertas con flecha indicando hacia abajo
+
+---
+
+#### PASO 2: Observar el mapa de Colombia
+![Paso 2 - Ver mapa](imagenes/04-ver-alertas/paso2-ver-mapa.png)
+> **Imagen debe mostrar:** Mapa con marcadores de colores y leyenda:
+> - 🔴 Riesgo Alto
+> - 🟠 Riesgo Medio
+> - 🟡 Riesgo Bajo
+
+---
+
+#### PASO 3: Click en un marcador de alerta
+![Paso 3 - Click marcador](imagenes/04-ver-alertas/paso3-click-marcador.png)
+> **Imagen debe mostrar:** Cursor haciendo click en marcador con popup abierto
+
+---
+
+### ✅ POSTCONDICIONES
+┌─────────────────────────────────────────────────────────────────────────────────────────────────────┐ 
+│ ✓ Información de alerta visible │ │ ✓ Nivel de riesgo identificado │ │ ✓ Ubicación exacta conocida │ 
+└─────────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+---
+
+## 🌤️ TAREA 5: CONSULTAR PRONÓSTICO DEL CLIMA
+
+### ✅ PRECONDICIONES
+┌────────────────────────────────────────────────────────────────────────┐ 
+│ ☑ Portal abierto en página principal │ │ ☑ Conexión a internet activa │ 
+└────────────────────────────────────────────────────────────────────────┘
+
+
+### 📋 PROCESO
+
+#### PASO 1: Ubicar sección "Pronóstico del Clima"
+![Paso 1 - Ubicar sección](imagenes/05-pronostico/paso1-ubicar-seccion.png)
+> **Imagen debe mostrar:** Sección de pronóstico con recuadro resaltado
+
+---
+
+#### PASO 2: Seleccionar una ciudad del menú desplegable
+![Paso 2 - Seleccionar ciudad](imagenes/05-pronostico/paso2-seleccionar-ciudad.png)
+> **Imagen debe mostrar:** Dropdown con opciones: Bucaramanga, Bogotá, Medellín, etc.
+
+---
+
+#### PASO 3: Ver el pronóstico por horas
+![Paso 3 - Ver pronóstico](imagenes/05-pronostico/paso3-ver-pronostico.png)
+> **Imagen debe mostrar:** Tarjetas con:
+> - ① Hora
+> - ② Temperatura
+> - ③ Icono del clima
+> - ④ Línea roja indicando hora actual
+
+---
+
+### ✅ POSTCONDICIONES
+┌─────────────────────────────────────────────────────────────────────────────────────────────────────────────┐ 
+│ ✓ Pronóstico de 48 horas visible │ │ ✓ Temperatura actualizada mostrada │ │ ✓ Condición climática conocida │ 
+└─────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+---
+
+## 📢 TAREA 6: REPORTAR UNA INCIDENCIA
+
+### ✅ PRECONDICIONES
+┌─────────────────────────────────────────────────────────────────────────────┐ 
+│ ☑ Haber iniciado sesión (Tarea 2) │ │ ☑ Estar en página principal o región │ 
+└─────────────────────────────────────────────────────────────────────────────┘
+
+
+### 📋 PROCESO
+
+#### PASO 1: Click en "Reportar Incidencia"
+![Paso 1 - Click reportar](imagenes/06-reportar/paso1-click-reportar.png)
+> **Imagen debe mostrar:** 
+> - Opción 1: Desde el menú lateral
+> - Opción 2: Desde el footer
+> - Flechas señalando ambas opciones
+
+---
+
+#### PASO 2: Seleccionar tipo de incidencia
+![Paso 2 - Tipo incidencia](imagenes/06-reportar/paso2-tipo-incidencia.png)
+> **Imagen debe mostrar:** Dropdown con opciones:
+> - Incendio forestal
+> - Inundación
+> - Deslizamiento
+> - Otro
+
+---
+
+#### PASO 3: Escribir descripción detallada
+![Paso 3 - Descripción](imagenes/06-reportar/paso3-descripcion.png)
+> **Imagen debe mostrar:** Área de texto con ejemplo de descripción completada
+
+---
+
+#### PASO 4: Adjuntar archivo (Opcional)
+![Paso 4 - Adjuntar archivo](imagenes/06-reportar/paso4-adjuntar.png)
+> **Imagen debe mostrar:** Botón "Examinar" con archivo seleccionado
+
+---
+
+#### PASO 5: Click en "Enviar incidencia"
+![Paso 5 - Enviar](imagenes/06-reportar/paso5-enviar.png)
+> **Imagen debe mostrar:** Botón verde "Enviar incidencia" con flecha grande
+
+---
+
+### ✅ POSTCONDICIONES
+┌──────────────────────────────────────────────────────────────────────────────────────────────────────────────┐ 
+│ ✓ Incidencia enviada exitosamente │ │ ✓ Mensaje de confirmación visible │ │ ✓ Modal cerrado automáticamente │ 
+└──────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+---
+
+## 📚 TAREA 7: DESCARGAR GUÍAS DE SEGURIDAD (Brigadista)
+
+### ✅ PRECONDICIONES
+┌────────────────────────────────────────────────────────────────────────────────────────┐ 
+│ ☑ Haber iniciado sesión como │ │ BRIGADISTA (Tarea 2) │ │ ☑ Estar en página de región │ 
+└────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+### 📋 PROCESO
+
+#### PASO 1: Navegar a una región (Tarea 3)
+![Paso 1 - Ir a región](imagenes/07-descargar-guias/paso1-ir-region.png)
+> **Imagen debe mostrar:** Página de región cargada con rol "Brigadista"
+
+---
+
+#### PASO 2: Ubicar "Biblioteca de Recursos"
+![Paso 2 - Ubicar biblioteca](imagenes/07-descargar-guias/paso2-ubicar-biblioteca.png)
+> **Imagen debe mostrar:** Scroll hacia sección con lista de guías disponibles
+
+---
+
+#### PASO 3: Click en el botón de descarga
+![Paso 3 - Descargar guía](imagenes/07-descargar-guias/paso3-descargar.png)
+> **Imagen debe mostrar:** Lista de guías:
+> - ① Prevención de Incendios Forestales [📥]
+> - ② Seguridad en Campo [📥]
+> - ③ Primeros Auxilios [📥]
+> - ④ Protocolos de Evacuación [📥]
+> 
+> Flecha apuntando a un botón de descarga
+
+---
+
+### ✅ POSTCONDICIONES
+┌──────────────────────────────────────────────────────────────────────────────────────────────┐ 
+│ ✓ Archivo PDF descargado │ │ ✓ Guía disponible offline │ │ ✓ Puede consultarse sin internet │ 
+└──────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+---
+
+## 🚨 TAREA 8: NOTIFICAR ALERTA A BRIGADA (Brigadista)
+
+### ✅ PRECONDICIONES
+┌────────────────────────────────────────────────────────────────────────────────────────┐ 
+│ ☑ Haber iniciado sesión como │ │ BRIGADISTA (Tarea 2) │ │ ☑ Estar en página de región │ 
+└────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+### 📋 PROCESO
+
+#### PASO 1: Ubicar sección "Notificar Alerta"
+![Paso 1 - Ubicar sección](imagenes/08-notificar-alerta/paso1-ubicar-seccion.png)
+> **Imagen debe mostrar:** Sección con mapa interactivo resaltada
+
+---
+
+#### PASO 2: Click en una zona del mapa
+![Paso 2 - Seleccionar zona](imagenes/08-notificar-alerta/paso2-seleccionar-zona.png)
+> **Imagen debe mostrar:** Mapa con cursor haciendo click en zona específica
+
+---
+
+#### PASO 3: Seleccionar tipo de alerta
+![Paso 3 - Tipo alerta](imagenes/08-notificar-alerta/paso3-tipo-alerta.png)
+> **Imagen debe mostrar:** Botones de tipo:
+> - 🔥 Incendio
+> - 💧 Inundación
+> - ⛰️ Deslizamiento
+> - ⚠️ Otra
+>
+> Uno resaltado con círculo
+
+---
+
+#### PASO 4: Seleccionar destinatarios
+![Paso 4 - Destinatarios](imagenes/08-notificar-alerta/paso4-destinatarios.png)
+> **Imagen debe mostrar:** Checkboxes:
+> - ☑ Co-investigadores
+> - ☑ Brigada
+> - ☐ Otro
+
+---
+
+#### PASO 5: Escribir mensaje de alerta
+![Paso 5 - Mensaje](imagenes/08-notificar-alerta/paso5-mensaje.png)
+> **Imagen debe mostrar:** Área de texto con mensaje de ejemplo
+
+---
+
+#### PASO 6: Enviar o compartir
+![Paso 6 - Enviar](imagenes/08-notificar-alerta/paso6-enviar.png)
+> **Imagen debe mostrar:** Dos botones:
+> - ① Enviar notificación
+> - ② Compartir enlace
+
+---
+
+### ✅ POSTCONDICIONES
+┌────────────────────────────────────────────────────────────────────────────────────────────────────────┐ 
+│ ✓ Alerta enviada a destinatarios │ │ ✓ Notificación confirmada │ │ ✓ Equipo informado de la situación │ 
+└────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+---
+
+## 📊 TAREA 9: CONSULTAR DATOS HISTÓRICOS (Investigador)
+
+### ✅ PRECONDICIONES
+┌──────────────────────────────────────────────────────────────────────────────────────────┐ 
+│ ☑ Haber iniciado sesión como │ │ INVESTIGADOR (Tarea 2) │ │ ☑ Estar en página de región │ 
+└──────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+### 📋 PROCESO
+
+#### PASO 1: Ubicar "Análisis de Series Históricas"
+![Paso 1 - Ubicar sección](imagenes/09-datos-historicos/paso1-ubicar-seccion.png)
+> **Imagen debe mostrar:** Scroll hacia formulario de análisis
+
+---
+
+#### PASO 2: Seleccionar departamento
+![Paso 2 - Departamento](imagenes/09-datos-historicos/paso2-departamento.png)
+> **Imagen debe mostrar:** Dropdown con departamentos, uno seleccionado, marcado con ①
+
+---
+
+#### PASO 3: Seleccionar estación meteorológica
+![Paso 3 - Estación](imagenes/09-datos-historicos/paso3-estacion.png)
+> **Imagen debe mostrar:** Dropdown con estaciones, marcado con ②
+
+---
+
+#### PASO 4: Elegir variables a analizar
+![Paso 4 - Variables](imagenes/09-datos-historicos/paso4-variables.png)
+> **Imagen debe mostrar:** Checkboxes:
+> - ☑ Precipitación
+> - ☑ Temperatura
+> - ☐ Humedad
+> - ☑ Viento
+> - ☐ Radiación solar
+
+---
+
+#### PASO 5: Definir rango de fechas
+![Paso 5 - Fechas](imagenes/09-datos-historicos/paso5-fechas.png)
+> **Imagen debe mostrar:** Dos campos de fecha:
+> - ① Fecha inicio: 01/01/2023
+> - ② Fecha fin: 31/12/2023
+
+---
+
+#### PASO 6: Click en "Consultar"
+![Paso 6 - Consultar](imagenes/09-datos-historicos/paso6-consultar.png)
+> **Imagen debe mostrar:** Botón "Consultar" con flecha grande
+
+---
+
+### ✅ POSTCONDICIONES
+┌────────────────────────────────────────────────────────────────────────────────────────────────────────┐ 
+│ ✓ Datos históricos cargados │ │ ✓ Tabla con resultados visible │ │ ✓ Listo para visualizar o exportar │ 
+└────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+---
+
+## 💾 TAREA 10: EXPORTAR DATOS (Investigador)
+
+### ✅ PRECONDICIONES
+┌──────────────────────────────────────────────────────────────────────┐ 
+│ ☑ Haber consultado datos (Tarea 9) │ │ ☑ Datos visibles en pantalla │ 
+└──────────────────────────────────────────────────────────────────────┘
+
+
+### 📋 PROCESO
+
+#### PASO 1: Seleccionar formato de exportación
+![Paso 1 - Formato](imagenes/10-exportar-datos/paso1-formato.png)
+> **Imagen debe mostrar:** Radio buttons:
+> - ○ CSV
+> - ◉ Excel
+> - ○ PDF
+
+---
+
+#### PASO 2: Click en "Descargar"
+![Paso 2 - Descargar](imagenes/10-exportar-datos/paso2-descargar.png)
+> **Imagen debe mostrar:** Botón "Descargar" con icono 📥
+
+---
+
+#### PASO 3: Verificar archivo descargado
+![Paso 3 - Verificar](imagenes/10-exportar-datos/paso3-verificar.png)
+> **Imagen debe mostrar:** Carpeta de descargas con archivo resaltado
+
+---
+
+### ✅ POSTCONDICIONES
+┌────────────────────────────────────────────────────────────────────────────────────────────────────────────┐ 
+│ ✓ Archivo descargado exitosamente │ │ ✓ Datos disponibles offline │ │ ✓ Puede abrirse en Excel/lector PDF │ 
+└────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+---
+
+## ❓ SOLUCIÓN DE PROBLEMAS COMUNES
+
+### ⚠️ PROBLEMA 1: No puedo ver el mapa
+┌─────────────────────────────────────────────────────────────────────────────────────────────┐ 
+│ ✓ Verificar conexión a internet │ │ ✓ Refrescar página (F5) │ │ ✓ Probar en otro navegador │ 
+└─────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+### ⚠️ PROBLEMA 2: No aparecen sugerencias de búsqueda
+┌──────────────────────────────────────────────────────────┐ 
+│ ✓ Escribir al menos 2 letras │ │ ✓ Verificar ortografía │ 
+└──────────────────────────────────────────────────────────┘
+
+
+### ⚠️ PROBLEMA 3: No puedo reportar incidencia
+┌─────────────────────────────────────────────────────────────────────────────────────┐ 
+│ ✓ Verificar que iniciaste sesión │ │ ✓ Completar todos los campos │ │ obligatorios │ 
+└─────────────────────────────────────────────────────────────────────────────────────┘
+
+
+### ⚠️ PROBLEMA 4: El menú no se cierra
+┌──────────────────────────────────────────────────────────────────────────────────────────┐ 
+│ ✓ Presionar tecla ESC │ │ ✓ Click fuera del menú │ │ ✓ Refrescar página (última opción) │ 
+└──────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+---
+
+## 📞 CONTACTO Y SOPORTE
+
+┌──────────────────────────────────────────────────────────────────────────────────────────────────────┐ 
+│ 📞 Línea Nacional: 01 8000 123 456 │ │ 📧 Email: contacto@ideam.gov.co │ │ 🌐 Web: www.ideam.gov.co │ 
+└──────────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+---
+
+## 📝 INFORMACIÓN DEL DOCUMENTO
+
+Versión: 2.0 Fecha: Noviembre 2024 Formato: Estilo IKEA (Visual) Autor: Proyecto IDEAM - Universidad
+
+
+---
+
+**FIN DEL MANUAL DE USUARIO**
