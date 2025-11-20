@@ -111,9 +111,9 @@
 ## 🗺️ TAREA 3: BUSCAR INFORMACIÓN POR REGIÓN
 
 ### ✅ PRECONDICIONES
-┌─────────────────────────────────┐
+
 │ ☑ Portal abierto en navegador  │ 
-└─────────────────────────────────┘
+
 
 
 ### 📋 PROCESO
@@ -528,5 +528,6 @@ Versión: 2.0 Fecha: Noviembre 2024 Formato: Estilo IKEA (Visual) Autor: Proyect
 ---
 
 **FIN DEL MANUAL DE USUARIO**
+
 
 
