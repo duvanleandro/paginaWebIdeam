@@ -744,9 +744,9 @@ localStorage.clear();
 
 Para soporte técnico o reportar bugs:
 
-**Repositorio del proyecto**: (agregar URL si existe)
+**Repositorio del proyecto**: [(Ideam)](https://github.com/duvanleandro/paginaWebIdeam)
 
-**Desarrollador**: Estudiante de Ingeniería - Quinto Semestre
+**Desarrollador**: Duvan Leandro Pedraza Gonzalez - Quinto Semestre
 
 **Email de contacto**: contacto@ideam.gov.co
 
@@ -806,5 +806,6 @@ paginaWebIdeam/
 ---
 
 **Versión**: 1.0
-**Fecha**: Noviembre 2024
-**Autor**: Estudiante de Ingeniería - Quinto Semestre
+**Fecha**: Noviembre 2025
+**Autor**: Duvan Leandro Pedraza Gonzalez- Quinto Semestre
+
